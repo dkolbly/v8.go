@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# make sure go is installed
+hash go 2>/dev/null || { echo "You need to install go." >&2 ; exit 1; }
+
+# make sure subversion is installed
 hash svn 2>/dev/null || { echo >&2 "You need to install Subversion client."; exit 1; }
 
 # find download tool
@@ -51,7 +55,7 @@ if [ $need_v8 == 'true' ]; then
 	fi
 
 	# build
-	make i18nsupport=off native
+	make ${MAKE_OPTIONS} i18nsupport=off native
 
 	# end
 	cd ..
