@@ -51,7 +51,7 @@ if [ $need_v8 == 'true' ]; then
 	gcc48=`gcc -v 2>&1 | tail -1 | grep "gcc [^0-9 ]\+ 4.8"`
 	if [ ! "$gcc48" == ""  ]; then
 		cp build/standalone.gypi build/standalone.gypi.bk
-		patch build/standalone.gypi ../gcc48.patch
+		patch build/standalone.gypi ../v8-for-go/gcc48.patch
 	fi
 
 	# build
